@@ -1,0 +1,401 @@
+{
+  "categorias": [
+    {
+      "categoria": "Suculentas",
+      "plantas": [
+        {
+          "nombre_comun": "Aloe Vera",
+          "nombre_cientifico": "Aloe barbadensis miller",
+          "descripcion": "Planta suculenta perenne con hojas gruesas, carnosas y dentadas, de color verde grisáceo, que crecen en roseta. Es muy valorada por el gel que contiene en su interior, usado en cosmética y medicina natural.",
+          "medidas": {
+            "altura_cm": "30-60",
+            "ancho_cm": "30-50",
+            "profundidad_raiz_cm": "20-30"
+          },
+          "cuidados": {
+            "luz": "Luz indirecta brillante o sol directo suave",
+            "riego": "Escaso, dejar secar el sustrato entre riegos",
+            "temperatura_ideal_c": "13-27",
+            "humedad": "Baja",
+            "tipo_suelo": "Sustrato para cactus/suculentas, bien drenado"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "Tóxica para mascotas si se ingiere en grandes cantidades",
+          "dificultad_cuidado": "Baja",
+          "usos": ["Medicinal", "Ornamental", "Cosmético"]
+        },
+        {
+          "nombre_comun": "Echeveria",
+          "nombre_cientifico": "Echeveria elegans",
+          "descripcion": "Suculenta de hojas carnosas dispuestas en forma de roseta, con tonos que van del verde azulado al rosado en los bordes. Muy popular como planta ornamental de exterior e interior.",
+          "medidas": {
+            "altura_cm": "10-15",
+            "ancho_cm": "15-20",
+            "profundidad_raiz_cm": "10-15"
+          },
+          "cuidados": {
+            "luz": "Sol directo o luz muy brillante",
+            "riego": "Escaso, técnica de remojo y secado",
+            "temperatura_ideal_c": "18-26",
+            "humedad": "Baja",
+            "tipo_suelo": "Sustrato arenoso y bien drenado"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "No tóxica",
+          "dificultad_cuidado": "Baja",
+          "usos": ["Ornamental", "Decoración de jardines de rocas"]
+        }
+      ]
+    },
+    {
+      "categoria": "Cactus",
+      "plantas": [
+        {
+          "nombre_comun": "Cactus Saguaro",
+          "nombre_cientifico": "Carnegiea gigantea",
+          "descripcion": "Cactus columnar de gran tamaño, símbolo del desierto de Sonora. Posee un tronco grueso con brazos característicos que crecen con la edad, cubierto de espinas.",
+          "medidas": {
+            "altura_cm": "300-1500",
+            "ancho_cm": "50-80",
+            "profundidad_raiz_cm": "10-90 (raíces extendidas horizontalmente)"
+          },
+          "cuidados": {
+            "luz": "Sol directo pleno",
+            "riego": "Muy escaso, resistente a sequía",
+            "temperatura_ideal_c": "15-38",
+            "humedad": "Muy baja",
+            "tipo_suelo": "Arenoso, muy drenado"
+          },
+          "ciclo_vida": "Perenne (puede vivir más de 150 años)",
+          "toxicidad": "No tóxica, pero sus espinas son peligrosas",
+          "dificultad_cuidado": "Media",
+          "usos": ["Ornamental", "Ecosistema desértico"]
+        },
+        {
+          "nombre_comun": "Cactus de Navidad",
+          "nombre_cientifico": "Schlumbergera bridgesii",
+          "descripcion": "Cactus de tallos planos y segmentados, sin espinas, que florece en invierno con flores tubulares de colores vivos como rosa, rojo o blanco.",
+          "medidas": {
+            "altura_cm": "15-30",
+            "ancho_cm": "30-45",
+            "profundidad_raiz_cm": "10-15"
+          },
+          "cuidados": {
+            "luz": "Luz indirecta brillante",
+            "riego": "Moderado, mantener sustrato ligeramente húmedo",
+            "temperatura_ideal_c": "15-24",
+            "humedad": "Media",
+            "tipo_suelo": "Sustrato rico en materia orgánica, bien drenado"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "No tóxica",
+          "dificultad_cuidado": "Baja",
+          "usos": ["Ornamental", "Regalo navideño"]
+        }
+      ]
+    },
+    {
+      "categoria": "Plantas de interior",
+      "plantas": [
+        {
+          "nombre_comun": "Potos",
+          "nombre_cientifico": "Epipremnum aureum",
+          "descripcion": "Planta trepadora o colgante de hojas acorazonadas verdes con vetas amarillas o blancas. Muy resistente y fácil de cultivar, ideal para principiantes.",
+          "medidas": {
+            "altura_cm": "20-30 (en maceta)",
+            "longitud_tallo_cm": "hasta 300 en condiciones óptimas",
+            "profundidad_raiz_cm": "10-20"
+          },
+          "cuidados": {
+            "luz": "Luz indirecta, tolera sombra",
+            "riego": "Moderado, dejar secar la superficie del sustrato",
+            "temperatura_ideal_c": "18-27",
+            "humedad": "Media",
+            "tipo_suelo": "Sustrato universal con buen drenaje"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "Tóxica para mascotas y humanos si se ingiere",
+          "dificultad_cuidado": "Muy baja",
+          "usos": ["Ornamental", "Purificación de aire"]
+        },
+        {
+          "nombre_comun": "Sansevieria (Lengua de suegra)",
+          "nombre_cientifico": "Sansevieria trifasciata",
+          "descripcion": "Planta de hojas erguidas, rígidas y puntiagudas, con patrones verdes y amarillos. Muy tolerante al descuido y a condiciones de poca luz.",
+          "medidas": {
+            "altura_cm": "50-120",
+            "ancho_cm": "20-40",
+            "profundidad_raiz_cm": "15-25"
+          },
+          "cuidados": {
+            "luz": "Baja a alta, muy adaptable",
+            "riego": "Escaso, cada 2-3 semanas",
+            "temperatura_ideal_c": "15-29",
+            "humedad": "Baja",
+            "tipo_suelo": "Sustrato bien drenado, tipo cactus"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "Moderadamente tóxica para mascotas",
+          "dificultad_cuidado": "Muy baja",
+          "usos": ["Ornamental", "Purificación de aire"]
+        },
+        {
+          "nombre_comun": "Helecho de Boston",
+          "nombre_cientifico": "Nephrolepis exaltata",
+          "descripcion": "Helecho de follaje frondoso, con hojas largas y arqueadas de color verde intenso. Aporta un aspecto exuberante a los espacios interiores.",
+          "medidas": {
+            "altura_cm": "60-90",
+            "ancho_cm": "60-90",
+            "profundidad_raiz_cm": "15-20"
+          },
+          "cuidados": {
+            "luz": "Indirecta, evitar sol directo",
+            "riego": "Frecuente, mantener el sustrato húmedo",
+            "temperatura_ideal_c": "16-24",
+            "humedad": "Alta",
+            "tipo_suelo": "Rico en materia orgánica, con buena retención de humedad"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "No tóxica",
+          "dificultad_cuidado": "Media",
+          "usos": ["Ornamental", "Decoración de interiores húmedos"]
+        }
+      ]
+    },
+    {
+      "categoria": "Árboles",
+      "plantas": [
+        {
+          "nombre_comun": "Roble Común",
+          "nombre_cientifico": "Quercus robur",
+          "descripcion": "Árbol de gran porte, longevo y de tronco robusto, con hojas lobuladas caducas. Produce bellotas como fruto y es fundamental en ecosistemas templados.",
+          "medidas": {
+            "altura_m": "20-40",
+            "diametro_copa_m": "15-25",
+            "diametro_tronco_cm": "100-300"
+          },
+          "cuidados": {
+            "luz": "Sol pleno",
+            "riego": "Moderado, tolera sequía una vez establecido",
+            "temperatura_ideal_c": "5-30",
+            "humedad": "Media",
+            "tipo_suelo": "Profundo, fértil y bien drenado"
+          },
+          "ciclo_vida": "Perenne (puede vivir varios siglos)",
+          "toxicidad": "Las bellotas son tóxicas para algunos animales",
+          "dificultad_cuidado": "Media (requiere espacio amplio)",
+          "usos": ["Maderable", "Ecológico", "Ornamental"]
+        },
+        {
+          "nombre_comun": "Ficus benjamina",
+          "nombre_cientifico": "Ficus benjamina",
+          "descripcion": "Árbol de hoja perenne con follaje denso, hojas ovaladas y brillantes. Muy usado como árbol ornamental de interior y exterior en climas cálidos.",
+          "medidas": {
+            "altura_m": "hasta 3 (interior) / hasta 20 (exterior)",
+            "diametro_copa_m": "1-2 (interior) / hasta 10 (exterior)",
+            "diametro_tronco_cm": "10-40 (interior)"
+          },
+          "cuidados": {
+            "luz": "Luz brillante indirecta",
+            "riego": "Moderado, evitar encharcamiento",
+            "temperatura_ideal_c": "16-27",
+            "humedad": "Media a alta",
+            "tipo_suelo": "Sustrato universal con buen drenaje"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "Tóxica para mascotas",
+          "dificultad_cuidado": "Media",
+          "usos": ["Ornamental", "Bonsái"]
+        }
+      ]
+    },
+    {
+      "categoria": "Arbustos",
+      "plantas": [
+        {
+          "nombre_comun": "Rosal",
+          "nombre_cientifico": "Rosa spp.",
+          "descripcion": "Arbusto con tallos espinosos y flores vistosas, perfumadas y de múltiples colores. Ampliamente cultivado con fines ornamentales y comerciales.",
+          "medidas": {
+            "altura_cm": "60-200",
+            "ancho_cm": "60-150",
+            "profundidad_raiz_cm": "30-60"
+          },
+          "cuidados": {
+            "luz": "Sol pleno, mínimo 6 horas diarias",
+            "riego": "Regular, evitar mojar el follaje",
+            "temperatura_ideal_c": "15-28",
+            "humedad": "Media",
+            "tipo_suelo": "Fértil, rico en materia orgánica y bien drenado"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "No tóxica (espinas pueden causar heridas)",
+          "dificultad_cuidado": "Media-alta",
+          "usos": ["Ornamental", "Perfumería", "Flor cortada"]
+        },
+        {
+          "nombre_comun": "Lavanda",
+          "nombre_cientifico": "Lavandula angustifolia",
+          "descripcion": "Arbusto aromático de tallos leñosos y flores pequeñas de color violeta agrupadas en espigas. Muy usada en aromaterapia y jardinería ornamental.",
+          "medidas": {
+            "altura_cm": "30-90",
+            "ancho_cm": "30-60",
+            "profundidad_raiz_cm": "20-40"
+          },
+          "cuidados": {
+            "luz": "Sol pleno",
+            "riego": "Escaso, resistente a sequía",
+            "temperatura_ideal_c": "15-30",
+            "humedad": "Baja",
+            "tipo_suelo": "Calcáreo, bien drenado, poco fértil"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "No tóxica (uso seguro en aromaterapia)",
+          "dificultad_cuidado": "Baja",
+          "usos": ["Aromática", "Medicinal", "Ornamental"]
+        }
+      ]
+    },
+    {
+      "categoria": "Plantas trepadoras",
+      "plantas": [
+        {
+          "nombre_comun": "Hiedra común",
+          "nombre_cientifico": "Hedera helix",
+          "descripcion": "Planta trepadora de hoja perenne, con hojas lobuladas de color verde oscuro. Se adhiere a superficies mediante raíces aéreas, ideal para cubrir muros.",
+          "medidas": {
+            "longitud_m": "hasta 20-30 en exterior",
+            "ancho_hoja_cm": "4-10",
+            "profundidad_raiz_cm": "15-30"
+          },
+          "cuidados": {
+            "luz": "Sombra parcial a luz indirecta",
+            "riego": "Moderado",
+            "temperatura_ideal_c": "10-24",
+            "humedad": "Media",
+            "tipo_suelo": "Fértil, bien drenado"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "Tóxica para humanos y mascotas si se ingiere",
+          "dificultad_cuidado": "Baja",
+          "usos": ["Ornamental", "Cobertura de muros y suelos"]
+        },
+        {
+          "nombre_comun": "Buganvilia",
+          "nombre_cientifico": "Bougainvillea glabra",
+          "descripcion": "Planta trepadora leñosa con brácteas vistosas de colores intensos (magenta, naranja, blanco) que rodean flores pequeñas. Muy usada en climas cálidos.",
+          "medidas": {
+            "longitud_m": "hasta 5-12",
+            "ancho_m": "2-4",
+            "profundidad_raiz_cm": "30-50"
+          },
+          "cuidados": {
+            "luz": "Sol pleno",
+            "riego": "Moderado a escaso",
+            "temperatura_ideal_c": "18-32",
+            "humedad": "Baja a media",
+            "tipo_suelo": "Bien drenado, tolera suelos pobres"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "Savia levemente irritante",
+          "dificultad_cuidado": "Media",
+          "usos": ["Ornamental", "Cercas vivas"]
+        }
+      ]
+    },
+    {
+      "categoria": "Hierbas aromáticas y medicinales",
+      "plantas": [
+        {
+          "nombre_comun": "Menta",
+          "nombre_cientifico": "Mentha spicata",
+          "descripcion": "Hierba aromática de hojas verdes dentadas y olor característico refrescante. Se propaga rápidamente mediante estolones.",
+          "medidas": {
+            "altura_cm": "30-60",
+            "ancho_cm": "30-45 (se expande rápidamente)",
+            "profundidad_raiz_cm": "10-20"
+          },
+          "cuidados": {
+            "luz": "Sol parcial a sombra ligera",
+            "riego": "Frecuente, mantener sustrato húmedo",
+            "temperatura_ideal_c": "15-25",
+            "humedad": "Media-alta",
+            "tipo_suelo": "Fértil y húmedo"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "No tóxica",
+          "dificultad_cuidado": "Muy baja",
+          "usos": ["Culinario", "Medicinal", "Aromático"]
+        },
+        {
+          "nombre_comun": "Romero",
+          "nombre_cientifico": "Salvia rosmarinus",
+          "descripcion": "Arbusto aromático de hojas finas y perennes similares a agujas, con flores azuladas pequeñas. Muy resistente a la sequía.",
+          "medidas": {
+            "altura_cm": "50-150",
+            "ancho_cm": "50-100",
+            "profundidad_raiz_cm": "20-40"
+          },
+          "cuidados": {
+            "luz": "Sol pleno",
+            "riego": "Escaso",
+            "temperatura_ideal_c": "10-30",
+            "humedad": "Baja",
+            "tipo_suelo": "Bien drenado, poco fértil"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "No tóxica en uso culinario normal",
+          "dificultad_cuidado": "Baja",
+          "usos": ["Culinario", "Medicinal", "Ornamental"]
+        }
+      ]
+    },
+    {
+      "categoria": "Plantas acuáticas",
+      "plantas": [
+        {
+          "nombre_comun": "Loto",
+          "nombre_cientifico": "Nelumbo nucifera",
+          "descripcion": "Planta acuática perenne con grandes hojas redondeadas que flotan o se elevan sobre el agua, y flores vistosas de gran tamaño en tonos rosados o blancos.",
+          "medidas": {
+            "altura_cm": "60-150 (sobre el nivel del agua)",
+            "diametro_hoja_cm": "40-60",
+            "profundidad_agua_cm": "30-90"
+          },
+          "cuidados": {
+            "luz": "Sol pleno",
+            "riego": "Requiere estar sumergida en agua permanentemente",
+            "temperatura_ideal_c": "22-30",
+            "humedad": "Alta (acuática)",
+            "tipo_suelo": "Sustrato arcilloso en el fondo del estanque"
+          },
+          "ciclo_vida": "Perenne",
+          "toxicidad": "No tóxica",
+          "dificultad_cuidado": "Media",
+          "usos": ["Ornamental", "Simbólico/religioso", "Culinario (semillas y raíces)"]
+        },
+        {
+          "nombre_comun": "Lechuga de agua",
+          "nombre_cientifico": "Pistia stratiotes",
+          "descripcion": "Planta flotante con hojas suaves en forma de roseta, similares a una lechuga. Ayuda a oxigenar y dar sombra en estanques.",
+          "medidas": {
+            "altura_cm": "5-15",
+            "ancho_cm": "10-30",
+            "profundidad_raiz_cm": "raíces sumergidas de 10-20 cm"
+          },
+          "cuidados": {
+            "luz": "Sol pleno a sombra parcial",
+            "riego": "Flotante, requiere agua constante",
+            "temperatura_ideal_c": "20-30",
+            "humedad": "Alta (acuática)",
+            "tipo_suelo": "No requiere sustrato, flota libremente"
+          },
+          "ciclo_vida": "Perenne (en climas cálidos)",
+          "toxicidad": "Tóxica si se ingiere en grandes cantidades",
+          "dificultad_cuidado": "Baja",
+          "usos": ["Ornamental", "Filtración de agua en estanques"]
+        }
+      ]
+    }
+  ]
+}
