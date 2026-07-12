@@ -2,6 +2,7 @@
   "categorias": [
     {
       "categoria": "Suculentas",
+      "descripcion": "Plantas que almacenan agua en sus hojas, tallos o raíces. Son resistentes a la sequía y requieren pocos cuidados.",
       "plantas": [
         {
           "nombre_comun": "Aloe Vera",
@@ -49,6 +50,7 @@
     },
     {
       "categoria": "Cactus",
+      "descripcion": "Plantas adaptadas a climas áridos y desérticos, caracterizadas por su capacidad para almacenar agua y resistir largos periodos de sequía.",
       "plantas": [
         {
           "nombre_comun": "Cactus Saguaro",
@@ -96,6 +98,7 @@
     },
     {
       "categoria": "Plantas de interior",
+      "descripcion": "Plantas ideales para cultivar dentro de casas u oficinas, ya que se adaptan a espacios con poca luz y aportan un ambiente natural.",
       "plantas": [
         {
           "nombre_comun": "Potos",
@@ -164,6 +167,7 @@
     },
     {
       "categoria": "Árboles",
+      "descripcion": "Plantas leñosas de gran tamaño que producen sombra, oxígeno y cumplen un papel importante en el equilibrio de los ecosistemas.",
       "plantas": [
         {
           "nombre_comun": "Roble Común",
@@ -211,6 +215,7 @@
     },
     {
       "categoria": "Arbustos",
+      "descripcion": "Plantas leñosas de tamaño mediano que se utilizan principalmente con fines ornamentales y para formar cercos o jardines.",
       "plantas": [
         {
           "nombre_comun": "Rosal",
@@ -258,6 +263,7 @@
     },
     {
       "categoria": "Plantas trepadoras",
+      "descripcion": "Plantas que crecen apoyándose sobre estructuras, muros o árboles, siendo muy utilizadas para decorar fachadas y jardines.",
       "plantas": [
         {
           "nombre_comun": "Hiedra común",
@@ -305,6 +311,7 @@
     },
     {
       "categoria": "Hierbas aromáticas y medicinales",
+      "descripcion": "Plantas apreciadas por sus propiedades culinarias, aromáticas y medicinales, utilizadas tanto en la cocina como en la medicina natural.",
       "plantas": [
         {
           "nombre_comun": "Menta",
@@ -352,6 +359,7 @@
     },
     {
       "categoria": "Plantas acuáticas",
+      "descripcion": "Plantas que viven en ambientes acuáticos o semiacuáticos, contribuyendo al equilibrio de estanques, lagos y otros cuerpos de agua.",
       "plantas": [
         {
           "nombre_comun": "Loto",
