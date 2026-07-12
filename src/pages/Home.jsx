@@ -1,24 +1,87 @@
+import data from "../data/plantasSeed.json";
+
 function Home() {
   const features = [
     {
-      icon: "journal",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          className="h-8 w-8 text-emerald-700"
+        >
+          <path
+            d="M6 4h9a2 2 0 0 1 2 2v13a1 1 0 0 1-1.4.9L12 18l-3.6 1.9A1 1 0 0 1 7 19V4Z"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+            fill="#ECFDF5"
+          />
+          <path
+            d="M9 8h5M9 11h5"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+          <path
+            d="M6 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h1"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
+      ),
       title: "Cuaderno de campo digital",
       text: "Registra siembras, riegos, cosechas y fotos sin perder el historial de cada planta.",
-      classes: "card h-100 border-0 seed-card p-4"
     },
     {
-      icon: "library",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          className="h-8 w-8 text-emerald-700"
+        >
+          <path
+            d="M12 3c-3 2-5 2-8 1v14c3 1 5 1 8-1 3 2 5 2 8 1V4c-3 1-5 1-8-1Z"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+            fill="#ECFDF5"
+          />
+          <path d="M12 3v14" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+      ),
       title: "Categorías de cultivo",
       text: "Organiza hortalizas, aromáticas y flores con guías prácticas para cada etapa.",
-      classes: "card h-100 border-0 seed-card p-4"
     },
     {
-      icon: "analytics",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          className="h-8 w-8 text-emerald-700"
+        >
+          <path
+            d="M4 20V10M10 20V4M16 20v-7M22 20H2"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M4 10 9 5l4 3 5-6"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
       title: "Seguimiento de progreso",
       text: "Visualiza tareas próximas y mejora tus resultados con datos fáciles de entender.",
-      classes: "card h-100 border-0 seed-card p-4"
-    }
+    },
   ];
+
+  const plantas = data.categorias.flatMap((cat) => cat.plantas).slice(0, 3);
 
   return (
     <>
@@ -109,7 +172,7 @@ function Home() {
       <section className="description py-8 sm:py-12 lg:py-16 bg-[#E8F5E9]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <div className="text-sm font-extrabold text-emerald-900 uppercase tracking-wide">
-            Qué es Seedie
+            ¿Qué es Seedie?
           </div>
           <h2 className="mt-2 text-2xl sm:text-5xl font-bold text-emerald-950">
             Una web simple para cuidar cada cultivo.
@@ -118,17 +181,101 @@ function Home() {
             La propuesta mejora tu página actual con más jerarquía, tarjetas
             consistentes, llamadas a la acción claras y una estructura clara.
           </p>
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
             {features.map((feature) => (
-                <div className="rounded-2xl bg-white shadow-sm p-6 text-left hover:shadow-md transition-shadow" key={feature.title}>
-                  <article className={feature.classes}>
-                    < i className={`bi bi-${feature.icon}`} />
-                    <h3 className="text-lg font-bold text-emerald-900">{feature.title}</h3>
-                    <p className="mt-2 text-sm text-emerald-900/70">{feature.text}</p>
-                  </article>
+              <article
+                key={feature.title}
+                className="rounded-2xl bg-white shadow-sm p-6 text-left hover:shadow-md transition-shadow"
+              >
+                <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-emerald-50">
+                  {feature.icon}
                 </div>
+                <h3 className="mt-3 text-lg font-bold text-emerald-900">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm text-emerald-900/70">
+                  {feature.text}
+                </p>
+              </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="cuaderno py-8 sm:py-12 lg:py-16" id="cuaderno">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-[2.5fr_1fr] gap-6 lg:gap-10 items-center">
+            <div>
+              <div className="text-sm font-extrabold text-emerald-900 uppercase tracking-wide">
+                Cuaderno de campo
+              </div>
+              <h2 className="mt-4 sm:mt-6 text-2xl sm:text-5xl font-bold text-emerald-950 leading-tight">
+                Últimas plantas agregadas
+              </h2>
+            </div>
+            <a
+              href="#inicio"
+              className="justify-self-start lg:justify-self-end
+            self-center inline-flex items-center gap-2 rounded-full
+            bg-emerald-900 text-white px-6 py-3 font-semibold
+            hover:bg-emerald-800 transition-colors"
+            >
+              Nueva entrada
+            </a>
+          </div>
+          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 plantas-start">
+            {plantas.map((plant) => (
+              <article
+                className="flex flex-col h-full rounded-2xl bg-white shadow-sm p-6 text-left hover:shadow-md transition-shadow"
+                key={plant.nombre_comun}
+              >
+                <div className="h-40 w-full rounded-xl bg-emerald-50 overflow-hidden">
+                  <img
+                    className="h-full w-full object-cover"
+                    src={plant.imagen || undefined}
+                    alt={plant.nombre_comun}
+                  />
+                </div>
+
+                <div className="flex flex-col flex-1 mt-4">
+                  <span className="w-fit inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">
+                    {plant.dificultad_cuidado}
+                  </span>
+
+                  <h3 className="mt-3 text-lg font-bold text-emerald-900">
+                    {plant.nombre_comun}
+                  </h3>
+
+                  <div className="mt-2 mb-5 text-sm text-stone-600">
+                    <span>Ciclo de vida: </span>
+                    <strong className="text-stone-800">
+                      {plant.ciclo_vida}
+                    </strong>
+                  </div>
+
+                  <a
+                    className="mt-auto w-full justify-center inline-flex items-center gap-2
+                    rounded-full border border-emerald-700
+                    bg-emerald-100 text-emerald-900 px-6 py-3 font-semibold
+                    hover:bg-emerald-700 hover:text-white transition-colors"
+                    href=""
+                  >
+                    Ver guía
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section py-8 sm:py-12 lg:py-16" id="comunidad">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+          <blockquote className="text-3xl sm:text-4xl font-bold italic text-emerald-600">
+            “Seedie me ayuda a recordar cada riego y entender qué funciona mejor
+            en mi huerto urbano.”
+          </blockquote>
+          <cite className="block mt-4 font-bold">— Ana García, agricultora urbana</cite>
         </div>
       </section>
     </>
