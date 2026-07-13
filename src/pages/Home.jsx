@@ -1,6 +1,10 @@
+import { useState } from "react";
 import data from "../data/plantasSeed.json";
+import QRScannerModal from "../components/QRScannerModal";
+import { Link } from "react-router";
 
 function Home() {
+  const [showScanner, setShowScanner] = useState(false);
   const features = [
     {
       icon: (
@@ -81,7 +85,11 @@ function Home() {
     },
   ];
 
-  const plantas = data.categorias.flatMap((cat) => cat.plantas).slice(0, 3);
+  const plantas = data.categorias
+    .flatMap((cat) =>
+      cat.plantas.map((planta) => ({ ...planta, categoria: cat.categoria })),
+    )
+    .slice(0, 3);
 
   return (
     <>
@@ -106,17 +114,22 @@ function Home() {
                 Agrega una planta
               </a>
               <a
-                href="#categorias"
+                href="/categorias"
                 className="inline-flex items-center rounded-full border border-emerald-700 px-6 py-3 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-50"
               >
                 Ver categorías
               </a>
               <button
                 type="button"
+                onClick={() => setShowScanner(true)}
                 className="inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-200/60"
               >
                 Escanear QR
               </button>
+
+              {showScanner && (
+                <QRScannerModal onClose={() => setShowScanner(false)} />
+              )}
             </div>
           </div>
 
@@ -253,15 +266,15 @@ function Home() {
                     </strong>
                   </div>
 
-                  <a
+                  <Link
                     className="mt-auto w-full justify-center inline-flex items-center gap-2
                     rounded-full border border-emerald-700
                     bg-emerald-100 text-emerald-900 px-6 py-3 font-semibold
                     hover:bg-emerald-700 hover:text-white transition-colors"
-                    href=""
+                    to={`/planta/${encodeURIComponent(plant.categoria)}/${encodeURIComponent(plant.nombre_comun)}`}
                   >
                     Ver guía
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}
@@ -275,7 +288,9 @@ function Home() {
             “Seedie me ayuda a recordar cada riego y entender qué funciona mejor
             en mi huerto urbano.”
           </blockquote>
-          <cite className="block mt-4 font-bold">— Ana García, agricultora urbana</cite>
+          <cite className="block mt-4 font-bold">
+            — Ana García, agricultora urbana
+          </cite>
         </div>
       </section>
     </>
