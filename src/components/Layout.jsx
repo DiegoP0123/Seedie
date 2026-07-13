@@ -130,15 +130,15 @@ function Layout() {
           <ul className="flex flex-col px-4 sm:px-6 py-3">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a
-                  href={link.href}
+                <NavLink
+                  to={link.href}
                   onClick={() => setOpen(false)}
                   className={`block py-2.5 text-sm font-medium ${
                     link.active ? "text-emerald-700" : "text-stone-600"
                   }`}
                 >
                   {link.label}
-                </a>
+                </NavLink>
               </li>
             ))}
             <li className="pt-2 pb-1">
