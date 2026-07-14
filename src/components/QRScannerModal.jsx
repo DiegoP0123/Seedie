@@ -33,34 +33,46 @@ function QRScannerModal({ onClose }) {
     [navigate, onClose]
   );
 
-  useEffect(() => {
-    const scanner = new Html5Qrcode("qr-reader");
-    scannerRef.current = scanner;
+useEffect(() => {
+  let isActive = true;
+  const scanner = new Html5Qrcode("qr-reader");
+  scannerRef.current = scanner;
 
-    scanner
-      .start(
-        { facingMode: "environment" },
-        { fps: 10, qrbox: 250 },
-        (decodedText) => {
-          if (hasHandledRef.current) return;
-          hasHandledRef.current = true;
-          handleResult(decodedText);
-        },
-        () => {}
-      )
-      .catch(() => {
+  scanner
+    .start(
+      { facingMode: "environment" },
+      { fps: 10, qrbox: 250 },
+      (decodedText) => {
+        if (hasHandledRef.current) return;
+        hasHandledRef.current = true;
+        handleResult(decodedText);
+      },
+      () => {}
+    )
+    .catch(() => {
+      if (isActive) {
         setError("No se pudo acceder a la cámara. Revisa los permisos del navegador.");
-      });
-
-    return () => {
-      if (scannerRef.current) {
-        scannerRef.current
-          .stop()
-          .then(() => scannerRef.current.clear())
-          .catch(() => {});
       }
-    };
-  }, [handleResult]);
+    });
+
+  return () => {
+    isActive = false;
+    const currentScanner = scannerRef.current;
+    if (currentScanner) {
+      currentScanner
+        .stop()
+        .then(() => currentScanner.clear())
+        .catch(() => {
+          // Ignora errores al limpiar: puede que nunca haya llegado a iniciar
+          try {
+            currentScanner.clear();
+          } catch {
+            // noop
+          }
+        });
+    }
+  };
+}, [handleResult]);
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
