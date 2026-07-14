@@ -6,73 +6,100 @@ import { useNavigate } from "react-router";
 function QRScannerModal({ onClose }) {
   const navigate = useNavigate();
   const scannerRef = useRef(null);
-  const [error, setError] = useState(null);
+  const startPromiseRef = useRef(null); // 👈 nuevo: guarda la promesa de start()
   const hasHandledRef = useRef(false);
 
+  const [error, setError] = useState(null);
+
+  const stopScannerSafely = useCallback(async () => {
+    const scanner = scannerRef.current;
+    if (!scanner) return;
+
+    try {
+      if (startPromiseRef.current) {
+        await startPromiseRef.current;
+      }
+
+      if (scanner.isScanning) {
+        await scanner.stop();
+      }
+      scanner.clear();
+    } catch {
+      try {
+        scanner.clear();
+      } catch {
+        // noop
+      }
+    }
+  }, []);
+
   const handleResult = useCallback(
-    (decodedText) => {
-      scannerRef.current
-        .stop()
-        .then(() => {
-          let path = decodedText;
+    async (decodedText) => {
+      await stopScannerSafely();
 
-          try {
-            const url = new URL(decodedText);
-            path = url.pathname + url.search + url.hash;
-          } catch {
-            // ya era un path relativo, se usa tal cual
-          }
+      let path = decodedText;
+      try {
+        const url = new URL(decodedText);
+        path = url.pathname + url.search + url.hash;
+      } catch {
+        // ya era un path relativo, se usa tal cual
+      }
 
-          onClose();
-          navigate(path);
-        })
-        .catch(() => {
-          onClose();
-        });
+      onClose();
+      navigate(path);
     },
-    [navigate, onClose]
+    [navigate, onClose, stopScannerSafely],
   );
 
-useEffect(() => {
-  let isActive = true;
-  const scanner = new Html5Qrcode("qr-reader");
-  scannerRef.current = scanner;
+  useEffect(() => {
+    let isActive = true;
+    let cancelled = false; // 👈 nuevo: para no arrancar si ya nos pidieron limpiar
 
-  scanner
-    .start(
-      { facingMode: "environment" },
-      { fps: 10, qrbox: 250 },
-      (decodedText) => {
-        if (hasHandledRef.current) return;
-        hasHandledRef.current = true;
-        handleResult(decodedText);
-      },
-      () => {}
-    )
-    .catch(() => {
-      if (isActive) {
-        setError("No se pudo acceder a la cámara. Revisa los permisos del navegador.");
+    async function iniciarScanner() {
+      const scanner = new Html5Qrcode("qr-reader");
+      scannerRef.current = scanner;
+
+      const promesaDeStart = scanner.start(
+        { facingMode: "environment" },
+        { fps: 10, qrbox: 250 },
+        (decodedText) => {
+          if (hasHandledRef.current) return;
+          hasHandledRef.current = true;
+          handleResult(decodedText);
+        },
+        () => {},
+      );
+
+      startPromiseRef.current = promesaDeStart;
+
+      try {
+        await promesaDeStart;
+
+        // Si el cleanup ya se disparó mientras esperábamos, detenemos
+        // este scanner de inmediato en vez de dejarlo corriendo.
+        if (cancelled) {
+          await scanner.stop().catch(() => {});
+          scanner.clear();
+          return;
+        }
+      } catch (err) {
+        console.error("Error al iniciar el scanner:", err);
+        if (isActive) {
+          setError(
+            "No se pudo acceder a la cámara. Revisa los permisos del navegador.",
+          );
+        }
       }
-    });
-
-  return () => {
-    isActive = false;
-    const currentScanner = scannerRef.current;
-    if (currentScanner) {
-      currentScanner
-        .stop()
-        .then(() => currentScanner.clear())
-        .catch(() => {
-          // Ignora errores al limpiar: puede que nunca haya llegado a iniciar
-          try {
-            currentScanner.clear();
-          } catch {
-            // noop
-          }
-        });
     }
-  };
-}, [handleResult]);
+
+    iniciarScanner();
+
+    return () => {
+      isActive = false;
+      cancelled = true;
+      stopScannerSafely();
+    };
+  }, [handleResult, stopScannerSafely]);
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">

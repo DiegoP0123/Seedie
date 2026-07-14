@@ -49,9 +49,7 @@ function AnimatedCard({ children, delay = 0, className = "" }) {
     <div
       ref={ref}
       className={`transition-all duration-700 ease-out ${
-        inView
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-6"
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       } ${className}`}
       style={{
         transitionDelay: `${delay}ms`,
@@ -104,8 +102,7 @@ function Home() {
         </svg>
       ),
       title: "Cuaderno de campo digital",
-      text:
-        "Registra siembras, riegos, cosechas y fotos sin perder el historial de cada planta.",
+      text: "Registra siembras, riegos, cosechas y fotos sin perder el historial de cada planta.",
     },
     {
       icon: (
@@ -121,16 +118,11 @@ function Home() {
             strokeLinejoin="round"
             fill="#ECFDF5"
           />
-          <path
-            d="M12 3v14"
-            stroke="currentColor"
-            strokeWidth="1.6"
-          />
+          <path d="M12 3v14" stroke="currentColor" strokeWidth="1.6" />
         </svg>
       ),
       title: "Categorías de cultivo",
-      text:
-        "Organiza hortalizas, aromáticas y flores con guías prácticas para cada etapa.",
+      text: "Organiza hortalizas, aromáticas y flores con guías prácticas para cada etapa.",
     },
     {
       icon: (
@@ -156,8 +148,7 @@ function Home() {
         </svg>
       ),
       title: "Seguimiento de progreso",
-      text:
-        "Visualiza tareas próximas y mejora tus resultados con datos fáciles de entender.",
+      text: "Visualiza tareas próximas y mejora tus resultados con datos fáciles de entender.",
     },
   ];
 
@@ -166,7 +157,7 @@ function Home() {
       categoria.plantas.map((planta) => ({
         ...planta,
         categoria: categoria.categoria,
-      }))
+      })),
     )
     .slice(0, 3);
 
@@ -229,9 +220,7 @@ function Home() {
             </div>
           </div>
 
-          <div
-            className="relative h-80 sm:h-96 rounded-3xl overflow-hidden bg-gradient-to-b from-sky-100 via-sky-50 to-emerald-50 shadow-inner"
-          >
+          <div className="relative h-80 sm:h-96 rounded-3xl overflow-hidden bg-gradient-to-b from-sky-100 via-sky-50 to-emerald-50 shadow-inner">
             {plantImageModules["../assets/Images/huerto_urbano.webp"] && (
               <img
                 src={plantImageModules["../assets/Images/huerto_urbano.webp"]}
@@ -273,9 +262,8 @@ function Home() {
           </h2>
 
           <p className="mt-4 text-emerald-900/80 max-w-2xl mx-auto">
-            La propuesta mejora tu página actual con más jerarquía,
-            tarjetas consistentes, llamadas a la acción claras y una
-            estructura clara.
+            La propuesta mejora tu página actual con más jerarquía, tarjetas
+            consistentes, llamadas a la acción claras y una estructura clara.
           </p>
 
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
@@ -352,7 +340,7 @@ function Home() {
                     <Link
                       className="mt-auto w-full justify-center inline-flex items-center gap-2 rounded-full border border-emerald-700 bg-emerald-100 text-emerald-900 px-6 py-3 font-semibold transition-all duration-300 hover:bg-emerald-700 hover:text-white hover:scale-[1.03]"
                       to={`/planta/${encodeURIComponent(
-                        plant.categoria
+                        plant.categoria,
                       )}/${encodeURIComponent(plant.nombre_comun)}`}
                     >
                       Ver guía
