@@ -38,11 +38,20 @@ function QRScannerModal({ onClose }) {
       await stopScannerSafely();
 
       let path = decodedText;
+
       try {
         const url = new URL(decodedText);
-        path = url.pathname + url.search + url.hash;
+
+        // Esta app usa HashRouter: la ruta real vive después del "#"
+        // ej: https://.../Seedie/#/planta/Cactus/Cactus%20Saguaro
+        //                        👆 esto es lo que nos interesa
+        if (url.hash) {
+          path = url.hash.slice(1); // quita el "#" → "/planta/Cactus/Cactus%20Saguaro"
+        } else {
+          path = url.pathname + url.search;
+        }
       } catch {
-        // ya era un path relativo, se usa tal cual
+        // no era una URL absoluta, se usa tal cual (ya debería venir como path relativo)
       }
 
       onClose();
