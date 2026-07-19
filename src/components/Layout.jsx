@@ -41,7 +41,7 @@ function Layout() {
   const navLinks = [
     { label: "Inicio", href: "/" },
     { label: "Categorías", href: "/categorias" },
-    { label: "Cuaderno", href: "/cuaderno" },
+    { label: "Sobre Nosotros", href: "/sobrenosotros" },
     { label: "Comunidad", href: "/comunidad" },
   ];
 
@@ -133,9 +133,11 @@ function Layout() {
                 <NavLink
                   to={link.href}
                   onClick={() => setOpen(false)}
-                  className={`block py-2.5 text-sm font-medium ${
-                    link.active ? "text-emerald-700" : "text-stone-600"
-                  }`}
+                  className={({ isActive }) =>
+                    `block py-2.5 text-sm font-medium ${
+                      isActive ? "text-emerald-700" : "text-stone-600"
+                    }`
+                  }
                 >
                   {link.label}
                 </NavLink>
