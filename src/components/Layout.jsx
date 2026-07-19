@@ -89,6 +89,10 @@ function Layout() {
           <a
             href="#cuaderno"
             className="hidden md:inline-flex items-center rounded-full bg-emerald-700 px-5 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-emerald-800"
+            onClick = {(e)=> {
+              e.preventDefault();
+              alert("Proximamente");
+            }}
           >
             Agregar planta
           </a>

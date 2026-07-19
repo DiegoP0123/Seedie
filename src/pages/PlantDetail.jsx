@@ -7,6 +7,11 @@ const imagenes = import.meta.glob("../assets/Images/*.webp", {
   import: "default",
 });
 
+const imagenesQr = import.meta.glob("../assets/Images/*.svg", {
+  eager: true,
+  import: "default",
+});
+
 function normalizarNombre(nombreComun) {
   return nombreComun
     .normalize("NFD")
@@ -26,7 +31,9 @@ function obtenerImagenesPlanta(nombreComun) {
     })
     .filter(Boolean);
 
-  return rutas;
+  const qr = imagenesQr[`../assets/Images/${nombreArchivo}_Qr.svg`] ?? null;
+
+  return { rutas, qr };
 }
 
 const val = (v, fallback = "No especificado") =>
@@ -72,7 +79,7 @@ function PlantDetail() {
     );
   }
 
-  const fotos = obtenerImagenesPlanta(plantaData.nombre_comun);
+  const { rutas: fotos, qr} = obtenerImagenesPlanta(plantaData.nombre_comun);
   const medidas = plantaData.medidas || {};
   const medidasEntries = Object.entries(medidas).filter(([, v]) => v);
   const cuidados = plantaData.cuidados || {};
@@ -188,6 +195,26 @@ function PlantDetail() {
                 </span>
               ))}
             </div>
+          </div>
+        )}
+
+        {qr && (
+          <div className="mt-6 mb-2 sm:mt-8 flex flex-col items-center bg-green-50 rounded-xl p-4 sm:p-6 gap-3 ring-1 ring-green-100">
+            <p className="text-green-800 font-semibold text-sm sm:text-base text-center">
+              Escanea o descarga el código QR de esta planta
+            </p>
+            <img
+              src={qr}
+              alt={`QR de ${plantaData.nombre_comun}`}
+              className="w-32 h-32 sm:w-40 sm:h-40 bg-white rounded-lg shadow-md p-2"
+            />
+            <a
+              href={qr}
+              download={`${normalizarNombre(plantaData.nombre_comun)}_Qr.svg`}
+              className="inline-flex items-center gap-1 text-sm font-medium text-green-700 bg-white border border-green-300 rounded-full px-4 py-1.5 hover:bg-green-100 transition-colors"
+            >
+              ⬇ Descargar QR
+            </a>
           </div>
         )}
 
