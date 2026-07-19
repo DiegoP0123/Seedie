@@ -195,6 +195,10 @@ function Home() {
               <a
                 href="#cuaderno"
                 className="inline-flex items-center rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-emerald-800 hover:scale-105 active:scale-95"
+                onClick = {(e)=> {
+                  e.preventDefault();
+                  alert("Proximamente");
+                }}
               >
                 Agrega una planta
               </a>
@@ -304,6 +308,10 @@ function Home() {
             <a
               href="#cuaderno"
               className="justify-self-start lg:justify-self-end self-center inline-flex items-center gap-2 rounded-full bg-emerald-900 text-white px-6 py-3 font-semibold transition-all duration-300 hover:bg-emerald-800 hover:scale-105 active:scale-95"
+              onClick = {(e)=> {
+                e.preventDefault();
+                alert("Proximamente");
+              }}
             >
               Nueva entrada
             </a>
